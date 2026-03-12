@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Premium Law Firm Design System - Dark Navy / Gold / Cream Institutional Palette */
+
+@layer base {
+  :root {
+    /* Deep institutional navy - darker and more prestigious */
+    --background: 40 15% 96%;
+    --foreground: 218 35% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 218 35% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 218 35% 12%;
+
+    /* Very deep navy primary */
+    --primary: 160 25% 8%;
+    --primary-foreground: 42 30% 95%;
+
+    /* Warm cream secondary */
+    --secondary: 42 25% 93%;
+    --secondary-foreground: 218 35% 12%;
+
+    /* Muted institutional tones */
+    --muted: 42 12% 90%;
+    --muted-foreground: 218 18% 42%;
+
+    /* Rich gold accent - more luxurious */
+    /* Rich gold – elegant, not yellow */
+    --accent: 38 45% 48%;
+    --accent-foreground: 40 30% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 42 15% 85%;
+    --input: 42 15% 85%;
+    --ring: 42 75% 48%;
+
+    --radius: 0rem;
+
+    /* Custom tokens - deeper, more premium */
+    --gold: 42 75% 48%;
+    --gold-light: 42 65% 62%;
+    --gold-dark: 42 80% 35%;
+    --navy: 218 45% 10%;
+    --navy-light: 218 40% 18%;
+    --navy-medium: 218 42% 14%;
+    --cream: 42 25% 93%;
+    --cream-dark: 42 20% 85%;
+    --cream-light: 42 30% 97%;
+
+    /* Premium gradients */
+    --gradient-hero: linear-gradient(
+      180deg,
+      hsl(160 25% 5% / 0.95) 0%,
+      hsl(160 25% 8% / 0.85) 100%
+    );
+
+    --gradient-gold: linear-gradient(
+      135deg,
+      hsl(42 75% 48%) 0%,
+      hsl(42 65% 55%) 100%
+    );
+    --gradient-overlay: linear-gradient(
+      180deg,
+      hsl(160 25% 6% / 0.85) 0%,
+      hsl(160 25% 7% / 0.65) 35%,
+      hsl(160 25% 8% / 0.35) 65%,
+      hsl(160 25% 8% / 0.15) 100%
+    );
+
+    --gradient-section: linear-gradient(
+      180deg,
+      hsl(42 25% 93%) 0%,
+      hsl(42 20% 88%) 100%
+    );
+  }
+
+  .dark {
+    --background: 218 45% 6%;
+    --foreground: 42 25% 95%;
+
+    --card: 218 40% 10%;
+    --card-foreground: 42 25% 95%;
+
+    --popover: 218 40% 10%;
+    --popover-foreground: 42 25% 95%;
+
+    --primary: 42 25% 95%;
+    --primary-foreground: 218 45% 10%;
+
+    --secondary: 218 35% 15%;
+    --secondary-foreground: 42 25% 95%;
+
+    --muted: 218 30% 18%;
+    --muted-foreground: 42 15% 65%;
+
+    --accent: 42 75% 52%;
+    --accent-foreground: 218 45% 6%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 218 30% 20%;
+    --input: 218 30% 20%;
+    --ring: 42 75% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Cormorant Garamond", serif;
+    @apply font-semibold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl leading-snug;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-36;
+  }
+
+  .container-narrow {
+    @apply max-w-5xl mx-auto px-6 lg:px-8;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Premium gold underline accent */
+  .gold-underline {
+    @apply relative inline-block;
+  }
+
+  .gold-underline::after {
+    content: "";
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-accent;
+  }
+
+  /* Premium card with subtle shadow */
+  .card-institutional {
+    @apply bg-card border border-border/40;
+    box-shadow: 0 4px 20px -4px hsl(218 45% 10% / 0.08);
+  }
+
+  /* Navigation link with gold underline animation */
+  .nav-link {
+    @apply relative text-sm font-medium tracking-wide uppercase transition-colors;
+    letter-spacing: 0.12em;
+  }
+
+  .nav-link::after {
+    content: "";
+    @apply absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
+
+  /* Premium section divider */
+  .section-divider {
+    @apply w-16 h-px bg-accent mx-auto;
+  }
+
+  /* Stats/numbers styling */
+  .stat-number {
+    font-family: "Cormorant Garamond", serif;
+    @apply text-5xl md:text-6xl lg:text-7xl font-semibold text-accent;
+  }
+
+  /* Premium button styles */
+  .btn-premium {
+    @apply inline-flex items-center justify-center px-8 py-4 text-sm font-medium tracking-widest uppercase transition-all duration-300;
+    letter-spacing: 0.15em;
+  }
+
+  .btn-premium-gold {
+    @apply btn-premium bg-accent text-accent-foreground hover:bg-gold-dark;
+  }
+
+  .btn-premium-outline {
+    @apply btn-premium border border-current bg-transparent;
+  }
+
+  /* Hero overlay */
+  .hero-overlay {
+    background: var(--gradient-overlay);
+  }
+
+  /* Practice area icon container */
+  .practice-icon {
+    @apply w-16 h-16 flex items-center justify-center border border-accent/30;
+  }
+
+  .practice-icon svg {
+    @apply w-7 h-7 text-accent stroke-[1.5];
+  }
+}
