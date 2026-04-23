@@ -97,23 +97,27 @@ const About = () => {
             >
               {/* Photo — собственная группа, независимая от текста */}
               <div className={`group/photo aspect-[4/5] bg-[#E0DCCE] overflow-hidden relative ${i === 1 ? 'lg:order-2' : ''}`}>
+                {/* Фото — плавный scale только при наведении на фото */}
                 <img
                   src={item.img}
                   alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-[900ms] ease-out lg:group-hover/photo:scale-[1.04]"
+                  className="w-full h-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] lg:group-hover/photo:scale-[1.04]"
                   style={{ filter: 'grayscale(0.2) sepia(0.12) contrast(1.04)' }}
                 />
 
-                {/* Static multiply overlay — only on founder photo */}
+                {/* Multiply overlay — только для фото основателя */}
                 {i === 0 && (
-                  <div className="absolute inset-0 pointer-events-none" style={{ backgroundColor: '#041e19', opacity: 0.10, mixBlendMode: 'multiply' }} />
+                  <div className="absolute inset-0 pointer-events-none" style={{ backgroundColor: '#041e19', opacity: 0.07, mixBlendMode: 'multiply' }} />
                 )}
 
-                {/* Gradient — subtle always, stronger on photo hover (desktop) */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#041e19]/10 to-transparent transition-opacity duration-600 lg:group-hover/photo:from-[#041e19]/60" />
+                {/* Постоянный лёгкий градиент снизу */}
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#041e19]/10 to-transparent" />
 
-                {/* Name + role — desktop photo hover only */}
-                <div className="absolute bottom-0 left-0 right-0 p-10 hidden lg:block translate-y-3 opacity-0 group-hover/photo:translate-y-0 group-hover/photo:opacity-100 transition-all duration-500 ease-out">
+                {/* Hover-градиент: opacity-transition (CSS умеет плавно) */}
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#041e19]/50 via-[#041e19]/10 to-transparent opacity-0 transition-opacity duration-[1000ms] ease-[cubic-bezier(0.16,1,0.3,1)] lg:group-hover/photo:opacity-100" />
+
+                {/* Имя и лейбл поверх — только десктоп, только hover */}
+                <div className="absolute bottom-0 left-0 right-0 p-10 pointer-events-none hidden lg:block opacity-0 translate-y-2 transition-[opacity,transform] duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] lg:group-hover/photo:opacity-100 lg:group-hover/photo:translate-y-0">
                   <span className="text-[#B08D57] text-[8px] uppercase tracking-[0.5em] font-sans font-bold block mb-2">
                     {item.label}
                   </span>
@@ -122,11 +126,11 @@ const About = () => {
                   </p>
                 </div>
 
-                {/* Gold corners — mobile always, desktop on photo hover */}
-                <div className="absolute top-0 right-0 w-8 h-[1px] bg-[#B08D57] lg:w-0 lg:group-hover/photo:w-12 transition-[width] duration-500 delay-100" />
-                <div className="absolute top-0 right-0 w-[1px] h-8 bg-[#B08D57] lg:h-0 lg:group-hover/photo:h-12 transition-[height] duration-500 delay-150" />
-                <div className="absolute bottom-0 left-0 h-[1px] w-8 bg-[#B08D57] lg:w-0 lg:group-hover/photo:w-12 transition-[width] duration-500" />
-                <div className="absolute bottom-0 left-0 w-[1px] h-8 bg-[#B08D57] lg:h-0 lg:group-hover/photo:h-12 transition-[height] duration-500 delay-50" />
+                {/* Золотые углы */}
+                <div className="absolute top-0 right-0 w-8 h-[1px] bg-[#B08D57] lg:w-0 lg:group-hover/photo:w-12 transition-[width] duration-[700ms] ease-[cubic-bezier(0.16,1,0.3,1)] delay-100" />
+                <div className="absolute top-0 right-0 w-[1px] h-8 bg-[#B08D57] lg:h-0 lg:group-hover/photo:h-12 transition-[height] duration-[700ms] ease-[cubic-bezier(0.16,1,0.3,1)] delay-200" />
+                <div className="absolute bottom-0 left-0 h-[1px] w-8 bg-[#B08D57] lg:w-0 lg:group-hover/photo:w-12 transition-[width] duration-[700ms] ease-[cubic-bezier(0.16,1,0.3,1)]" />
+                <div className="absolute bottom-0 left-0 w-[1px] h-8 bg-[#B08D57] lg:h-0 lg:group-hover/photo:h-12 transition-[height] duration-[700ms] ease-[cubic-bezier(0.16,1,0.3,1)] delay-100" />
               </div>
 
               {/* Text */}
@@ -188,19 +192,21 @@ const About = () => {
                   <img
                     src={person.img}
                     alt={person.name}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out lg:group-hover/photo:scale-[1.05]"
+                    className="w-full h-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] lg:group-hover/photo:scale-[1.04]"
                     style={{ filter: 'grayscale(0.2) sepia(0.12) contrast(1.04)' }}
                   />
-                  {/* Dark overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#041e19]/70 via-transparent to-transparent lg:opacity-0 lg:group-hover/photo:opacity-100 transition-opacity duration-500" />
+                  {/* Постоянный лёгкий градиент (мобильный) */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#041e19]/60 via-transparent to-transparent lg:from-[#041e19]/0" />
+                  {/* Hover-градиент */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#041e19]/65 via-transparent to-transparent opacity-0 transition-opacity duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] lg:group-hover/photo:opacity-100" />
                   {/* Bio */}
-                  <div className="absolute bottom-0 left-0 right-0 p-5 lg:translate-y-full lg:group-hover/photo:translate-y-0 transition-transform duration-500 ease-out">
+                  <div className="absolute bottom-0 left-0 right-0 p-5 lg:opacity-0 lg:translate-y-3 transition-[opacity,transform] duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)] lg:group-hover/photo:opacity-100 lg:group-hover/photo:translate-y-0">
                     <p className="text-white/85 text-[13px] italic leading-relaxed font-light">
                       {person.bio}
                     </p>
                   </div>
                   {/* Gold bottom line */}
-                  <div className="absolute bottom-0 left-0 h-[2px] bg-[#B08D57] w-full lg:w-0 lg:group-hover/photo:w-full transition-[width] duration-500" />
+                  <div className="absolute bottom-0 left-0 h-[2px] bg-[#B08D57] w-full lg:w-0 lg:group-hover/photo:w-full transition-[width] duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)]" />
                 </div>
 
                 {/* Name + role */}
