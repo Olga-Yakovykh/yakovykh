@@ -46,7 +46,7 @@ export const translations = {
         p3: 'Сьогодні до складу об\'єднання входять п\'ять практикуючих адвокатів, кожен з яких має значний досвід у своїй спеціалізації.',
       },
       structure: {
-        title: 'Організаційна структура',
+        title: 'Готові захистити ваші інтереси',
         description: 'Об\'єднання очолює Засновник та Голова, який забезпечує загальне стратегічне та професійне керівництво. Кожен адвокат об\'єднання спеціалізується на певних напрямках права, що дозволяє надавати клієнтам комплексну правову допомогу.',
       },
       principles: {
@@ -171,7 +171,7 @@ export const translations = {
         p3: 'Today, the association includes five practicing lawyers, each with significant experience in their specialization.',
       },
       structure: {
-        title: 'Organizational Structure',
+        title: 'Ready to Protect Your Interests',
         description: 'The association is headed by the Founder and Head, who provides overall strategic and professional leadership. Each lawyer in the association specializes in specific areas of law, enabling comprehensive legal assistance to clients.',
       },
       principles: {

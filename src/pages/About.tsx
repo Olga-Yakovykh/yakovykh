@@ -29,7 +29,7 @@ const About = () => {
     {
       label: language === 'uk' ? 'Засновник' : 'Founder',
       title: language === 'uk' ? 'Якових Володимир Ілліч' : 'Volodymyr Yakovykh',
-      role: language === 'uk' ? 'Засновник адвокатського об\'єднання «Якових та партнери»' : 'Founder of Law Association "Yakovykh and Partners"',
+      role: language === 'uk' ? 'Засновник об\'єднання' : 'Founder of the Association',
       text: t.about.history.p1,
       img: '/head.webp',
     },
