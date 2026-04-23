@@ -269,7 +269,7 @@ const About = () => {
           <h2 className="text-4xl md:text-6xl font-light mb-12 italic text-[#062c24] uppercase tracking-tight">
             {t.about.structure.title}
           </h2>
-          <Btn href="https://t.me/+380504922225" target="_blank" rel="noopener noreferrer" variant="dark" size="lg">
+          <Btn href="https://t.me/e_yako26" target="_blank" rel="noopener noreferrer" variant="dark" size="lg">
             <Send size={14} />
             {t.contacts.telegram.cta}
           </Btn>

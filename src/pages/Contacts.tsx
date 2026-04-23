@@ -24,7 +24,7 @@ const Contacts = () => {
     const msg = encodeURIComponent(
       `Ім'я: ${fields.name}\nТелефон: ${fields.phone}\nТема: ${fields.subject}\n\n${fields.message}`
     );
-    window.open(`https://t.me/+380504922225?text=${msg}`, '_blank');
+    window.open(`https://t.me/e_yako26?text=${msg}`, '_blank');
     setSent(true);
   };
 
@@ -256,7 +256,7 @@ const Contacts = () => {
                       ? 'Прямий канал для термінових юридичних питань. Конфіденційність гарантована.'
                       : 'Direct channel for urgent legal matters. Strict confidentiality guaranteed.'}
                   </p>
-                  <a href="https://t.me/+380504922225" target="_blank" rel="noopener noreferrer" className="neo-btn-gold w-full justify-center">
+                  <a href="https://t.me/e_yako26" target="_blank" rel="noopener noreferrer" className="neo-btn-gold w-full justify-center">
                     <Send size={13} strokeWidth={1.5} />
                     {t.contacts.telegram.cta}
                   </a>

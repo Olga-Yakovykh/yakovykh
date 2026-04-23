@@ -157,7 +157,7 @@ const Practice = () => {
                   </ul>
 
                   <a
-                    href="https://t.me/+380504922225"
+                    href="https://t.me/e_yako26"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="neo-btn-gold inline-flex"
@@ -188,7 +188,7 @@ const Practice = () => {
               {language === 'uk' ? 'Ми готові вам допомогти' : 'We are ready to help'}
             </h2>
             <a
-              href="https://t.me/+380504922225"
+              href="https://t.me/e_yako26"
               target="_blank"
               rel="noopener noreferrer"
               className="neo-btn-gold inline-flex mx-auto"

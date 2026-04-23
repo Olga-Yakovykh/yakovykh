@@ -225,7 +225,7 @@ const Index = () => {
             className="flex flex-col sm:flex-row gap-4 items-center justify-center"
           >
             <a
-              href="https://t.me/+380504922225"
+              href="https://t.me/e_yako26"
               target="_blank"
               rel="noopener noreferrer"
               className="neo-btn-gold w-full sm:w-auto"
@@ -349,7 +349,7 @@ const Index = () => {
               {language === 'uk' ? 'Ми готові вам допомогти' : 'We are ready to help'}
             </h2>
             <a
-              href="https://t.me/+380504922225"
+              href="https://t.me/e_yako26"
               target="_blank"
               rel="noopener noreferrer"
               className="neo-btn-gold inline-flex mx-auto"
