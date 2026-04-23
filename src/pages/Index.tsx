@@ -1,7 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Send, Gavel, Heart, Users, Car, Briefcase, Scale } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import heroImage from '@/assets/9.webp';
 
 import { Link } from 'react-router-dom';
 import { useRef, useEffect, useState } from 'react';
@@ -177,7 +176,7 @@ const Index = () => {
           className="absolute inset-0 z-0 scale-110"
           style={{ y: heroParallax }}
         >
-          <img src={heroImage} alt="" className="w-full h-full object-cover" />
+          <img src="/9.webp" alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-[#041e19]/80" />
         </motion.div>
 
