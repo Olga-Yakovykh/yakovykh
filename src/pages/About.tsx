@@ -19,10 +19,10 @@ const About = () => {
   const heroParallax = useTransform(scrollY, [0, 600], [0, 140]);
 
   const team = [
-    { name: 'Тетяна Бондаренко',  role: language === 'uk' ? 'Адвокат' : 'Attorney',       img: '/1.png', bio: 'Експерт у цивільному праві та складних судових спорах з фокусом на результат.' },
-    { name: 'Анастасія Костенко', role: language === 'uk' ? 'Адвокат' : 'Attorney',       img: '/2.png', bio: 'Захист у кримінальних провадженнях та представництво інтересів у ЄСПЛ.' },
-    { name: 'Юлія Волкова',       role: language === 'uk' ? 'Помічник адвоката' : 'Legal Assistant', img: '/3.png', bio: 'Аналітична підтримка, підготовка складних процесуальних документів та запитів.' },
-    { name: 'Яна Соколова',       role: language === 'uk' ? 'Помічник адвоката' : 'Legal Assistant', img: '/4.png', bio: 'Правовий супровід та ефективна взаємодія з державними контрольними органами.' },
+    { name: 'Тетяна Бондаренко',  role: language === 'uk' ? 'Адвокат' : 'Attorney',       img: '/1.webp', bio: 'Експерт у цивільному праві та складних судових спорах з фокусом на результат.' },
+    { name: 'Анастасія Костенко', role: language === 'uk' ? 'Адвокат' : 'Attorney',       img: '/2.webp', bio: 'Захист у кримінальних провадженнях та представництво інтересів у ЄСПЛ.' },
+    { name: 'Юлія Волкова',       role: language === 'uk' ? 'Помічник адвоката' : 'Legal Assistant', img: '/3.webp', bio: 'Аналітична підтримка, підготовка складних процесуальних документів та запитів.' },
+    { name: 'Яна Соколова',       role: language === 'uk' ? 'Помічник адвоката' : 'Legal Assistant', img: '/4.webp', bio: 'Правовий супровід та ефективна взаємодія з державними контрольними органами.' },
   ];
 
   const firmSections = [
@@ -31,7 +31,7 @@ const About = () => {
       title: language === 'uk' ? 'Якових Володимир Ілліч' : 'Volodymyr Yakovykh',
       role: language === 'uk' ? 'Засновник адвокатського об\'єднання «Якових та партнери»' : 'Founder of Law Association "Yakovykh and Partners"',
       text: t.about.history.p1,
-      img: '/head.png',
+      img: '/head.webp',
     },
     {
       label: language === 'uk' ? 'Голова об\'єднання' : 'Head of Association',
@@ -40,7 +40,7 @@ const About = () => {
       text: language === 'uk'
         ? 'Євген Якових очолює адвокатське об\'єднання та забезпечує стратегічне керівництво, представляє інтереси клієнтів у найскладніших справах і підтримує найвищі стандарти якості правової допомоги.'
         : 'Yevhen Yakovykh leads the law association, provides strategic leadership, represents clients in the most complex cases, and upholds the highest standards of legal assistance.',
-      img: '/head_new.png',
+      img: '/head_new.webp',
     },
   ];
 

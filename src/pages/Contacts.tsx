@@ -42,7 +42,7 @@ const Contacts = () => {
       {/* ── HERO ── */}
       <section ref={heroRef} className="relative h-[70vh] md:h-[80vh] flex items-center justify-center overflow-hidden border-b border-[#B08D57]/15">
         <motion.div className="absolute inset-0 z-0 scale-110" style={{ y: heroParallax }}>
-          <img src="/11.png" alt="" className="w-full h-full object-cover" />
+          <img src="/11.webp" alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-[#041e19]/65" />
         </motion.div>
 

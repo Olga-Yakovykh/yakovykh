@@ -20,11 +20,11 @@ const practiceIcons = {
 };
 
 const practicePhotos: Record<string, string> = {
-  criminal: '/15.png',
-  family:   '/8.png',
-  civil:    '/7.png',
-  traffic:  '/23.png',
-  business: '/22.png',
+  criminal: '/15.webp',
+  family:   '/8.webp',
+  civil:    '/7.webp',
+  traffic:  '/23.webp',
+  business: '/22.webp',
 };
 
 const subServices: Record<string, { uk: string[]; en: string[] }> = {
