@@ -164,7 +164,7 @@ const Contacts = () => {
                     <div className="absolute bottom-0 left-0 right-0 h-px bg-[#B08D57] scale-x-0 group-focus-within:scale-x-100 transition-transform duration-500 origin-left" />
                   </div>
 
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pt-12 border-t border-[#041E19]/8 mt-10">
+                  <div className="flex flex-col items-center sm:flex-row sm:items-center justify-between gap-6 pt-12 border-t border-[#041E19]/8 mt-10">
                     <p className="text-[9px] uppercase tracking-[0.35em] text-[#041E19]/30 font-sans max-w-xs leading-relaxed">
                       {language === 'uk'
                         ? 'Вся інформація охороняється адвокатською таємницею'
