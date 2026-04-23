@@ -93,14 +93,14 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 1.2 }}
-              className="grid lg:grid-cols-2 gap-10 md:gap-20 items-center mb-16 md:mb-32 last:mb-0 group"
+              className="grid lg:grid-cols-2 gap-10 md:gap-20 items-center mb-16 md:mb-32 last:mb-0"
             >
-              {/* Photo */}
-              <div className={`aspect-[4/5] bg-[#E0DCCE] overflow-hidden relative ${i === 1 ? 'lg:order-2' : ''}`}>
+              {/* Photo — собственная группа, независимая от текста */}
+              <div className={`group/photo aspect-[4/5] bg-[#E0DCCE] overflow-hidden relative ${i === 1 ? 'lg:order-2' : ''}`}>
                 <img
                   src={item.img}
                   alt={item.title}
-                  className="w-full h-full object-cover transition-all duration-[2500ms] ease-out group-hover:scale-[1.05]"
+                  className="w-full h-full object-cover transition-transform duration-[900ms] ease-out lg:group-hover/photo:scale-[1.04]"
                   style={{ filter: 'grayscale(0.2) sepia(0.12) contrast(1.04)' }}
                 />
 
@@ -109,11 +109,11 @@ const About = () => {
                   <div className="absolute inset-0 pointer-events-none" style={{ backgroundColor: '#041e19', opacity: 0.10, mixBlendMode: 'multiply' }} />
                 )}
 
-                {/* Subtle gradient — always, stronger on desktop hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#041e19]/30 to-transparent lg:from-[#041e19]/0 lg:group-hover:from-[#041e19]/75 lg:group-hover:via-[#041e19]/20 transition-all duration-700" />
+                {/* Gradient — subtle always, stronger on photo hover (desktop) */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#041e19]/25 to-transparent transition-opacity duration-600 lg:group-hover/photo:from-[#041e19]/70" />
 
-                {/* Name + role overlay — desktop hover only */}
-                <div className="absolute bottom-0 left-0 right-0 p-10 hidden lg:block lg:translate-y-4 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-700 ease-out">
+                {/* Name + role — desktop photo hover only */}
+                <div className="absolute bottom-0 left-0 right-0 p-10 hidden lg:block translate-y-3 opacity-0 group-hover/photo:translate-y-0 group-hover/photo:opacity-100 transition-all duration-500 ease-out">
                   <span className="text-[#B08D57] text-[8px] uppercase tracking-[0.5em] font-sans font-bold block mb-2">
                     {item.label}
                   </span>
@@ -122,16 +122,15 @@ const About = () => {
                   </p>
                 </div>
 
-                {/* Gold corners — always */}
-                <div className="absolute top-0 right-0 w-8 h-[1px] bg-[#B08D57] lg:w-0 lg:group-hover:w-12 transition-all duration-500 delay-200" />
-                <div className="absolute top-0 right-0 w-[1px] h-8 bg-[#B08D57] lg:h-0 lg:group-hover:h-12 transition-all duration-500 delay-300" />
-                <div className="absolute bottom-0 left-0 h-[1px] w-8 bg-[#B08D57] lg:w-0 lg:group-hover:w-12 transition-all duration-500 delay-100" />
-                <div className="absolute bottom-0 left-0 w-[1px] h-8 bg-[#B08D57] lg:h-0 lg:group-hover:h-12 transition-all duration-500 delay-200" />
+                {/* Gold corners — mobile always, desktop on photo hover */}
+                <div className="absolute top-0 right-0 w-8 h-[1px] bg-[#B08D57] lg:w-0 lg:group-hover/photo:w-12 transition-[width] duration-500 delay-100" />
+                <div className="absolute top-0 right-0 w-[1px] h-8 bg-[#B08D57] lg:h-0 lg:group-hover/photo:h-12 transition-[height] duration-500 delay-150" />
+                <div className="absolute bottom-0 left-0 h-[1px] w-8 bg-[#B08D57] lg:w-0 lg:group-hover/photo:w-12 transition-[width] duration-500" />
+                <div className="absolute bottom-0 left-0 w-[1px] h-8 bg-[#B08D57] lg:h-0 lg:group-hover/photo:h-12 transition-[height] duration-500 delay-50" />
               </div>
 
               {/* Text */}
               <div className={i === 1 ? 'lg:order-1' : ''}>
-                {/* Eyebrow label */}
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-px bg-[#B08D57]/50 w-8" />
                   <span className="text-[#B08D57] text-[9px] uppercase tracking-[0.5em] font-sans font-bold whitespace-nowrap">
@@ -139,7 +138,7 @@ const About = () => {
                   </span>
                 </div>
 
-                <h2 className="text-3xl md:text-5xl font-light uppercase tracking-tight mb-4 transition-colors duration-500 group-hover:text-[#041e19]">
+                <h2 className="text-3xl md:text-5xl font-light uppercase tracking-tight mb-4">
                   {item.title}
                 </h2>
 
@@ -147,10 +146,9 @@ const About = () => {
                   {item.role}
                 </p>
 
-                {/* Underline — wider on mobile */}
-                <div className="h-px bg-[#B08D57]/25 w-20 lg:w-12 mb-6 md:mb-8 group-hover:w-24 transition-all duration-700 ease-out" />
+                <div className="h-px bg-[#B08D57]/25 w-20 mb-6 md:mb-8" />
 
-                <p className="text-base md:text-xl leading-relaxed text-[#041e19]/70 italic border-l-2 border-[#B08D57] lg:border-[#B08D57]/40 lg:group-hover:border-[#B08D57] pl-6 md:pl-8 lg:group-hover:text-[#041e19]/85 transition-all duration-500">
+                <p className="text-base md:text-xl leading-relaxed text-[#041e19]/70 italic border-l-2 border-[#B08D57]/50 pl-6 md:pl-8">
                   {item.text}
                 </p>
               </div>
@@ -183,33 +181,33 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.8, delay: idx * 0.08 }}
-                className="group cursor-default"
+                className="cursor-default"
               >
-                {/* Photo */}
-                <div className="aspect-[3/4] overflow-hidden mb-6 bg-[#E0DCCE] relative">
+                {/* Photo — своя группа */}
+                <div className="group/photo aspect-[3/4] overflow-hidden mb-6 bg-[#E0DCCE] relative">
                   <img
                     src={person.img}
                     alt={person.name}
-                    className="w-full h-full object-cover transition-transform duration-[1800ms] ease-out group-hover:scale-[1.06]"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out lg:group-hover/photo:scale-[1.05]"
                     style={{ filter: 'grayscale(0.2) sepia(0.12) contrast(1.04)' }}
                   />
-                  {/* Dark overlay — always on mobile */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#041e19]/70 via-transparent to-transparent lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-700" />
-                  {/* Bio — always visible on mobile */}
-                  <div className="absolute bottom-0 left-0 right-0 p-5 lg:translate-y-full lg:group-hover:translate-y-0 transition-transform duration-700 ease-out">
+                  {/* Dark overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#041e19]/70 via-transparent to-transparent lg:opacity-0 lg:group-hover/photo:opacity-100 transition-opacity duration-500" />
+                  {/* Bio */}
+                  <div className="absolute bottom-0 left-0 right-0 p-5 lg:translate-y-full lg:group-hover/photo:translate-y-0 transition-transform duration-500 ease-out">
                     <p className="text-white/85 text-[13px] italic leading-relaxed font-light">
                       {person.bio}
                     </p>
                   </div>
-                  {/* Gold bottom line — always on mobile */}
-                  <div className="absolute bottom-0 left-0 h-[2px] bg-[#B08D57] w-full lg:w-0 lg:group-hover:w-full transition-all duration-500 delay-100" />
+                  {/* Gold bottom line */}
+                  <div className="absolute bottom-0 left-0 h-[2px] bg-[#B08D57] w-full lg:w-0 lg:group-hover/photo:w-full transition-[width] duration-500" />
                 </div>
 
                 {/* Name + role */}
-                <h4 className="text-lg font-medium mb-1 text-[#B08D57] lg:text-[#041e19] lg:group-hover:text-[#B08D57] transition-colors duration-400">
+                <h4 className="text-lg font-medium mb-1 text-[#B08D57] lg:text-[#041e19] transition-colors duration-300">
                   {person.name}
                 </h4>
-                <span className="text-[#8C734B] text-[10px] uppercase tracking-[0.2em] font-bold block transition-opacity duration-400">
+                <span className="text-[#8C734B] text-[10px] uppercase tracking-[0.2em] font-bold block">
                   {person.role}
                 </span>
               </motion.div>
