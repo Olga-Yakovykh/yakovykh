@@ -36,7 +36,7 @@ const About = () => {
     {
       label: language === 'uk' ? 'Голова об\'єднання' : 'Head of Association',
       title: language === 'uk' ? 'Якових Євген Володимирович' : 'Yevhen Yakovykh',
-      role: language === 'uk' ? 'Керуючий партнер та Голова адвокатського об\'єднання «Якових та партнери»' : 'Managing Partner and Head of Law Association "Yakovykh and Partners"',
+      role: language === 'uk' ? 'Керуючий партнер та Голова об\'єднання' : 'Managing Partner and Head of Association',
       text: language === 'uk'
         ? 'Євген Якових очолює адвокатське об\'єднання та забезпечує стратегічне керівництво, представляє інтереси клієнтів у найскладніших справах і підтримує найвищі стандарти якості правової допомоги.'
         : 'Yevhen Yakovykh leads the law association, provides strategic leadership, represents clients in the most complex cases, and upholds the highest standards of legal assistance.',
