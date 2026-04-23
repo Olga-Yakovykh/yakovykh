@@ -110,7 +110,7 @@ const About = () => {
                 )}
 
                 {/* Gradient — subtle always, stronger on photo hover (desktop) */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#041e19]/25 to-transparent transition-opacity duration-600 lg:group-hover/photo:from-[#041e19]/70" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#041e19]/10 to-transparent transition-opacity duration-600 lg:group-hover/photo:from-[#041e19]/60" />
 
                 {/* Name + role — desktop photo hover only */}
                 <div className="absolute bottom-0 left-0 right-0 p-10 hidden lg:block translate-y-3 opacity-0 group-hover/photo:translate-y-0 group-hover/photo:opacity-100 transition-all duration-500 ease-out">
