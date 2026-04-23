@@ -18,7 +18,7 @@ const practiceBgs = {
   criminal: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=800',
   family:   '/family.png',
   civil:    'https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=800',
-  traffic:  '/src/assets/car.png',
+  traffic:  '/car.png',
   business: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800',
 };
 
@@ -254,7 +254,7 @@ const Index = () => {
             {/* Photo */}
             <div className="aspect-[4/5] bg-[#E0DCCE] overflow-hidden relative">
               <img
-                src="/src/assets/20.png"
+                src="/20.png"
                 alt="About"
                 className="w-full h-full object-cover object-right transition-transform duration-[2000ms] ease-out group-hover:scale-[1.04]"
               />

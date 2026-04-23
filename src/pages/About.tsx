@@ -31,7 +31,7 @@ const About = () => {
       title: language === 'uk' ? 'Якових Володимир Ілліч' : 'Volodymyr Yakovykh',
       role: language === 'uk' ? 'Засновник адвокатського об\'єднання «Якових та партнери»' : 'Founder of Law Association "Yakovykh and Partners"',
       text: t.about.history.p1,
-      img: '/src/assets/head.png',
+      img: '/head.png',
     },
     {
       label: language === 'uk' ? 'Голова об\'єднання' : 'Head of Association',
@@ -40,7 +40,7 @@ const About = () => {
       text: language === 'uk'
         ? 'Євген Якових очолює адвокатське об\'єднання та забезпечує стратегічне керівництво, представляє інтереси клієнтів у найскладніших справах і підтримує найвищі стандарти якості правової допомоги.'
         : 'Yevhen Yakovykh leads the law association, provides strategic leadership, represents clients in the most complex cases, and upholds the highest standards of legal assistance.',
-      img: '/src/assets/head_new.png',
+      img: '/head_new.png',
     },
   ];
 

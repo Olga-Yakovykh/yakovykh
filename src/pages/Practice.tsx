@@ -20,11 +20,11 @@ const practiceIcons = {
 };
 
 const practicePhotos: Record<string, string> = {
-  criminal: '/src/assets/15.png',
-  family:   '/src/assets/8.png',
-  civil:    '/src/assets/7.png',
-  traffic:  '/src/assets/23.png',
-  business: '/src/assets/22.png',
+  criminal: '/15.png',
+  family:   '/8.png',
+  civil:    '/7.png',
+  traffic:  '/23.png',
+  business: '/22.png',
 };
 
 const subServices: Record<string, { uk: string[]; en: string[] }> = {
@@ -70,7 +70,7 @@ const Practice = () => {
       {/* ── HERO ── */}
       <section ref={heroRef} className="relative h-[80vh] flex items-center justify-center overflow-hidden border-b border-[#B08D57]/15">
         <motion.div className="absolute inset-0 z-0 scale-110" style={{ y: heroParallax }}>
-          <img src="/src/assets/1500.webp" alt="" className="w-full h-full object-cover" />
+          <img src="/1500.webp" alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-[#041e19]/65" />
         </motion.div>
 
