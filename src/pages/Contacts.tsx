@@ -78,7 +78,7 @@ const Contacts = () => {
       {/* ── ФОРМА ЗАПИТУ ── */}
       <section className="py-24 md:py-36 bg-white border-b border-[#B08D57]/10">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
-          <div className="grid lg:grid-cols-2 gap-20 items-start">
+          <div className="grid lg:grid-cols-2 gap-20 items-start max-w-2xl mx-auto lg:max-w-none">
 
             {/* Left: heading */}
             <motion.div
