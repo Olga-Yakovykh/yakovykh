@@ -109,34 +109,32 @@ const About = () => {
                   <div className="absolute inset-0 pointer-events-none" style={{ backgroundColor: '#041e19', opacity: 0.10, mixBlendMode: 'multiply' }} />
                 )}
 
-                {/* Gradient overlay — always on mobile, hover-only on desktop */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#041e19]/75 via-[#041e19]/20 to-transparent lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-700" />
+                {/* Subtle gradient — always, stronger on desktop hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#041e19]/30 to-transparent lg:from-[#041e19]/0 lg:group-hover:from-[#041e19]/75 lg:group-hover:via-[#041e19]/20 transition-all duration-700" />
 
-                {/* Name + role — always visible on mobile, slides on desktop */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 lg:translate-y-4 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-700 ease-out">
+                {/* Name + role overlay — desktop hover only */}
+                <div className="absolute bottom-0 left-0 right-0 p-10 hidden lg:block lg:translate-y-4 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-700 ease-out">
                   <span className="text-[#B08D57] text-[8px] uppercase tracking-[0.5em] font-sans font-bold block mb-2">
                     {item.label}
                   </span>
-                  <p className="text-white text-xl md:text-2xl font-light uppercase tracking-tight leading-tight">
+                  <p className="text-white text-2xl font-light uppercase tracking-tight leading-tight">
                     {item.title}
                   </p>
                 </div>
 
-                {/* Top-right gold corner */}
-                <div className="absolute top-0 right-0 w-8 lg:w-0 h-[1px] bg-[#B08D57] lg:group-hover:w-12 transition-all duration-500 delay-200" />
-                <div className="absolute top-0 right-0 w-[1px] h-8 lg:h-0 bg-[#B08D57] lg:group-hover:h-12 transition-all duration-500 delay-300" />
-
-                {/* Bottom-left gold corner */}
-                <div className="absolute bottom-0 left-0 h-[1px] bg-[#B08D57] w-8 lg:w-0 lg:group-hover:w-12 transition-all duration-500 delay-100" />
-                <div className="absolute bottom-0 left-0 w-[1px] bg-[#B08D57] h-8 lg:h-0 lg:group-hover:h-12 transition-all duration-500 delay-200" />
+                {/* Gold corners — always */}
+                <div className="absolute top-0 right-0 w-8 h-[1px] bg-[#B08D57] lg:w-0 lg:group-hover:w-12 transition-all duration-500 delay-200" />
+                <div className="absolute top-0 right-0 w-[1px] h-8 bg-[#B08D57] lg:h-0 lg:group-hover:h-12 transition-all duration-500 delay-300" />
+                <div className="absolute bottom-0 left-0 h-[1px] w-8 bg-[#B08D57] lg:w-0 lg:group-hover:w-12 transition-all duration-500 delay-100" />
+                <div className="absolute bottom-0 left-0 w-[1px] h-8 bg-[#B08D57] lg:h-0 lg:group-hover:h-12 transition-all duration-500 delay-200" />
               </div>
 
               {/* Text */}
               <div className={i === 1 ? 'lg:order-1' : ''}>
-                {/* Eyebrow line — always visible on mobile */}
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="h-px bg-[#B08D57]/30 w-8 lg:w-0 lg:group-hover:w-10 transition-all duration-700 ease-out" />
-                  <span className="text-[#B08D57] text-[9px] uppercase tracking-[0.5em] font-sans font-bold whitespace-nowrap lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-150">
+                {/* Eyebrow label */}
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="h-px bg-[#B08D57]/50 w-8" />
+                  <span className="text-[#B08D57] text-[9px] uppercase tracking-[0.5em] font-sans font-bold whitespace-nowrap">
                     {item.label}
                   </span>
                 </div>
