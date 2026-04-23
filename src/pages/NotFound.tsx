@@ -1,6 +1,7 @@
-import { useLocation, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { Gavel, ArrowLeft } from "lucide-react";
+import { Btn } from '@/components/Btn';
 
 const NotFound = () => {
   const location = useLocation();
@@ -10,7 +11,7 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#fdfcf0] text-[#062c24] font-serif p-6">
+    <div className="flex min-h-screen items-center justify-center bg-[#F8F7F5] text-[#062c24] font-serif p-6">
       {/* Декоративная тонкая рамка вокруг всего контента */}
       <div className="max-w-xl w-full border border-[#b08d57]/30 p-12 md:p-20 text-center relative">
         
@@ -40,13 +41,10 @@ const NotFound = () => {
           Запитуваний документ відсутній в архівах асоціації або був переміщений.
         </p>
 
-        <Link 
-          to="/" 
-          className="inline-flex items-center bg-[#062c24] text-[#fdfcf0] px-8 py-4 text-xs font-sans font-bold uppercase tracking-[0.3em] hover:bg-[#b08d57] transition-all duration-500 shadow-lg"
-        >
-          <ArrowLeft className="w-4 h-4 mr-3" />
+        <Btn to="/" variant="dark" size="md">
+          <ArrowLeft className="w-4 h-4" />
           Повернутися на головну
-        </Link>
+        </Btn>
 
         {/* Подпись внизу */}
         <p className="mt-12 text-[9px] uppercase tracking-[0.4em] text-[#062c24]/30 font-sans">

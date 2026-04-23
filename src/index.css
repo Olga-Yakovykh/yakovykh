@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Source+Sans+3:wght@300;400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -225,6 +225,81 @@
   /* Hero overlay */
   .hero-overlay {
     background: var(--gradient-overlay);
+  }
+
+  /* ─── NEOCLASSICAL BUTTON SYSTEM ─────────────────────────────── */
+
+  /* Shared base */
+  .neo-btn {
+    @apply relative inline-flex items-center justify-center gap-3 overflow-hidden
+           font-sans font-semibold text-[10px] uppercase tracking-[0.35em]
+           px-10 py-[14px] cursor-pointer select-none
+           transition-all duration-500;
+    letter-spacing: 0.35em;
+  }
+
+  /* Gold fill — primary CTA (on dark/photo backgrounds) */
+  .neo-btn-gold {
+    @apply neo-btn bg-[#b08d57] text-[#041e19];
+  }
+  .neo-btn-gold::before {
+    content: '';
+    @apply absolute inset-0 -skew-x-12 -translate-x-full
+           bg-gradient-to-r from-transparent via-white/25 to-transparent
+           transition-transform duration-700;
+  }
+  .neo-btn-gold:hover {
+    @apply -translate-y-px shadow-[0_8px_28px_rgba(176,141,87,0.45)];
+    background-color: #a07c4a;
+  }
+  .neo-btn-gold:hover::before {
+    @apply translate-x-full;
+  }
+  .neo-btn-gold svg {
+    @apply transition-transform duration-500;
+  }
+  .neo-btn-gold:hover svg {
+    @apply translate-x-0.5;
+  }
+
+  /* Ghost — outlined on dark/photo backgrounds */
+  .neo-btn-ghost {
+    @apply neo-btn border border-white/25 text-white/65;
+  }
+  .neo-btn-ghost:hover {
+    @apply border-[#b08d57]/70 text-[#b08d57] -translate-y-px;
+    background-color: rgba(176, 141, 87, 0.06);
+  }
+
+  /* Outline — dark border on light/white backgrounds */
+  .neo-btn-outline {
+    @apply neo-btn border border-[#041e19]/20 text-[#041e19]/65;
+  }
+  .neo-btn-outline:hover {
+    @apply border-[#b08d57] text-[#b08d57] -translate-y-px;
+    background-color: rgba(176, 141, 87, 0.04);
+  }
+
+  /* Dark fill — on light/white backgrounds (e.g. About CTA) */
+  .neo-btn-dark {
+    @apply neo-btn bg-[#041e19] text-[#F8F7F5];
+  }
+  .neo-btn-dark:hover {
+    @apply -translate-y-px shadow-[0_8px_28px_rgba(4,30,25,0.3)];
+    background-color: #062c24;
+  }
+
+  /* Subtle paper noise texture overlay */
+  .noise-overlay::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0.028;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 180px 180px;
   }
 
   /* Practice area icon container */
